@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* FOR THEME SWITCH */
+#toggle:checked ~ label div.toggle-dot{
+   @apply translate-x-3; 
+}
+
+
+
+/* FOR JOB DESCRIPTION MARKDOWN */
+
+strong {
+  @apply text-black;
+}
+
+.markDownArticle > p {
+  @apply mt-4;
+  @apply mb-4;
+}
+
+.markDownArticle > ul {
+  @apply mt-2;
+  @apply ml-4;
+  @apply list-disc;
+}
