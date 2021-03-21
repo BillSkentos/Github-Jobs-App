@@ -30,7 +30,7 @@ export default function JobList() {
 
   return (
     <div className="container  mx-auto  px-4 md:px-12">
-      <div className="flex md:flex-wrap -mx-1 lg:-mx-4 space-y-4">
+      <div className="flex items-center flex-wrap -mx-1 lg:-mx-4 ">
       
         { error && <h1>Error has occured .</h1>}
         

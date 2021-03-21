@@ -6,6 +6,7 @@ export default function Header() {
   
   const history = useHistory();
   const {darkMode,setDarkMode} = useJobsContext();
+
   //change theme 
   const toggleTheme = ()=>{
     setDarkMode(!darkMode);
@@ -19,21 +20,28 @@ export default function Header() {
 
 
   return (
-    <div className="flex flex-1  items-center flex-row bg-violet h-40">
-      <div className="flex-auto p-5 mb-16 cursor-pointer" onClick={()=>returnToHome()}>
-        <h1 className="text-white text-5xl ">DevJobs</h1>
+    <div className="flex  w-full items-center flex-row bg-violet h-40 p-5">
+      <div className=" mb-16 cursor-pointer font-title" onClick={()=>returnToHome()}>
+        <h1 className="text-white  text-5xl ">DevJobs</h1>
       </div>
-      <div className=" text-white flex-auto flex justify-end items-center p-5 space-x-4 mb-16">
-        <span className="text-sm text-white">Light </span>
-        
+      <div className="flex-auto text-black flex justify-end items-center  space-x-4 mb-16">
+       
+  
+        <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 15.635c.33 0 .612.295.612.639v1.89c0 .344-.282.638-.612.638s-.612-.294-.612-.638v-1.89c0-.344.282-.639.612-.639zm-4.488-1.783c.27.262.27.68 0 .941L4.03 16.231a.698.698 0 01-.97 0 .649.649 0 010-.941l1.482-1.438c.27-.261.7-.261.97 0zm9.946 0l1.483 1.438c.27.261.27.68 0 .941a.698.698 0 01-.97 0l-1.483-1.438a.649.649 0 010-.94c.242-.262.674-.262.97 0zM10 4.552c1.396 0 2.685.525 3.598 1.4.913.85 1.504 2.05 1.504 3.35 0 1.3-.59 2.5-1.504 3.35a5.314 5.314 0 01-3.598 1.4c-1.396 0-2.685-.525-3.598-1.4-.913-.85-1.504-2.05-1.504-3.35 0-1.3.564-2.5 1.504-3.35A5.314 5.314 0 0110 4.552zM2.607 8.906c.355 0 .658.274.658.594 0 .32-.303.594-.658.594H.658C.304 10.094 0 9.82 0 9.5c0-.32.304-.594.658-.594h1.95zm16.735 0c.354 0 .658.274.658.594 0 .32-.304.594-.658.594h-1.95c-.354 0-.657-.274-.657-.594 0-.32.303-.594.658-.594h1.949zM4.03 2.77l1.482 1.438c.27.261.27.68 0 .94-.242.262-.674.262-.97 0L3.059 3.71a.649.649 0 010-.941c.27-.261.701-.261.97 0zm12.91 0c.27.261.27.68 0 .941l-1.482 1.438a.698.698 0 01-.97 0 .649.649 0 010-.941l1.482-1.438c.27-.261.701-.261.97 0zM10 .198c.33 0 .612.294.612.638v1.89c0 .344-.282.639-.612.639s-.612-.295-.612-.639V.836c0-.344.282-.638.612-.638z" fill="#FFF" fillRule="nonzero"></path>
+        </svg>
         <input name = "" type = "checkbox" id = "toggle" className = "hidden" />
         <label htmlFor = "toggle">
-        <div onClick = {()=>toggleTheme()} className="w-9 h-5 flex items-center cursor-pointer bg-gray-300 p-1 rounded-full">
+          <div onClick = {()=>toggleTheme()} className="w-9 h-5 flex items-center cursor-pointer bg-gray-300 p-1 rounded-full">
             <div className="toggle-dot w-4 h-4 rounded-full  bg-white shadow-md transform duration-300 ease-in-out"></div>
-        </div>
+          </div>
         </label> 
         
-        <span className="text-sm text-white">Dark </span>
+        <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 0c1.516 0 2.925.566 3.978 1.523A3.979 3.979 0 008 1a4.014 4.014 0 00-2.821 1.179A3.927 3.927 0 004 5c0 1.095.463 2.105 1.179 2.821A3.927 3.927 0 008 9a4.034 4.034 0 003.974-3.548c.017.18.026.364.026.548a6.02 6.02 0 01-1.768 4.232A6.02 6.02 0 016 12a5.89 5.89 0 01-4.232-1.768A6.02 6.02 0 010 6a5.89 5.89 0 011.768-4.232A6.02 6.02 0 016 0z" fill="#FFF" fillRule="nonzero">
+          </path>
+        </svg>
+        
       </div>
     </div>
   );

@@ -18,6 +18,10 @@ export default function JobDescription() {
     });
   }
 
+  const goToCompanySite = ()=>{
+    window.open(jobViewed.company_url);
+  }
+
   //show skeleton element for 2.5 sec 
   useEffect(()=>{
     setTimeout(()=>{
@@ -27,7 +31,7 @@ export default function JobDescription() {
 
   return (
 
-   <div className="flex items-center justify-center w-full">
+   <div className="flex  justify-center w-full mx-auto">
      {showSkel === true &&  
        <div className="flex items-center relative w-full justify-center mt-4 ">
           <JobSkeleton />
@@ -37,20 +41,22 @@ export default function JobDescription() {
      {
       ( Object.keys(jobViewed).length !== 0 &&  showSkel===false)
           && 
-      <div className="flex flex-col h-35 w-1/2 absolute top-28 space-y-8">
+      <div className="flex flex-col h-35 sm:w-3/4    lg:w-1/2 absolute top-28 space-y-8">
        {/* {job company} */}
        <div className="flex flex-row bg-white rounded-md">
-          <div className={classNames(' rounded-tl-md text-6xl rounded-bl-md font-semibold h-35 w-40 text-white grid place-items-center',getRandomColor(jobViewed.company))}>
+          <div className={classNames(' rounded-tl-md text-6xl rounded-bl-md font-semibold h-full w-40 text-white grid place-items-center',getRandomColor(jobViewed.company))}>
               {jobViewed.company[0]}
           </div>
-          <div className="h-30 w-full h-auto text-lg  flex flex-row p-8 items-center justify-between ">
-             <div className="flex flex-col space-y-2">
+          <div className="h-30 w-full h-auto text-lg space-y-4  flex xl:flex-row sm:flex-col p-8 items-center justify-between ">
+             <div className="flex flex-col items-center space-y-2">
                <h2 className="font-semibold text-2xl text-black">{jobViewed.company}</h2>
                <p className="text-grey">{jobViewed.company_url}</p>
              </div>
-             <div>
-               <button className="bg-gray-200 hover:bg-gray-300 text-base text-violet font-bold py-2 px-4 rounded-sm  shadow">
-                 Company Site
+             <div className="flex items-center">
+               <button
+                onClick = {()=> goToCompanySite()} 
+                className="bg-gray-200 hover:bg-gray-300 text-base text-violet font-bold py-2 px-4 rounded-sm shadow">
+                Company Site
                </button>
              </div>
           </div>

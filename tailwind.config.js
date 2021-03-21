@@ -75,5 +75,5 @@ module.exports = {
   variants: {
     backgroundOpacity: ['responsive', 'hover', 'focus', 'dark'],
   },
-  
+
 }
