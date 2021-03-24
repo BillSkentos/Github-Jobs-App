@@ -29,34 +29,40 @@ export default function useFetch(params,page) {
   const [state,dispatch] = useReducer(reducer, {jobs: [] , loading:true});
   const {description,location,fullTime} = params;
   
-  let FULL_URL=BASE_URL;
-  //add description first in url 
-  if((description && description.length>0)){
-      FULL_URL = FULL_URL.concat(`description=${description}`);
-    if(location && location.length>0){
-      FULL_URL = FULL_URL.concat(`&location=${location}`);
-    }
-  }
+
+  let queryString = Object.keys(params).map(p=>`${(p)}` + `=` + `${params[p]}`).join("&");
+
+  let FULL_URL = BASE_URL + queryString;
+
+
+  // let FULL_URL=BASE_URL;
+  // //add description first in url 
+  // if((description && description.length>0)){
+  //     FULL_URL = FULL_URL.concat(`description=${description}`);
+  //   if(location && location.length>0){
+  //     FULL_URL = FULL_URL.concat(`&location=${location}`);
+  //   }
+  // }
   
-  //add location first in url 
-  if((location && location.length>0) && !description){
-      FULL_URL = FULL_URL.concat(`location=${location}`)
-    if(description && description.length>0){
-      FULL_URL = FULL_URL.concat(`&description=${description}`)
-    }
-  }
+  // //add location first in url 
+  // if((location && location.length>0) && !description){
+  //     FULL_URL = FULL_URL.concat(`location=${location}`)
+  //   if(description && description.length>0){
+  //     FULL_URL = FULL_URL.concat(`&description=${description}`)
+  //   }
+  // }
 
-  //add markdown to url 
-  if(FULL_URL.length>52){
-    FULL_URL = FULL_URL.concat(`&markdown=true&page=${page}`);
-  }else{
-    FULL_URL = FULL_URL.concat(`markdown=true&page=${page}`);
-  }
+  // //add markdown to url 
+  // if(FULL_URL.length>52){
+  //   FULL_URL = FULL_URL.concat(`&markdown=true&page=${page}`);
+  // }else{
+  //   FULL_URL = FULL_URL.concat(`markdown=true&page=${page}`);
+  // }
 
-  //add full time to url 
-  if(typeof fullTime !== "undefined"){
-    FULL_URL = FULL_URL.concat(`&full_time=${fullTime}`);
-  }
+  // //add full time to url 
+  // if(typeof fullTime !== "undefined"){
+  //   FULL_URL = FULL_URL.concat(`&full_time=${fullTime}`);
+  // }
 
   //add proxy to url 
   const urlWithProxy = `https://api.allorigins.win/get?url=${encodeURIComponent(FULL_URL)}`;
@@ -76,8 +82,8 @@ export default function useFetch(params,page) {
         setCurrentJobs([]);
         setCurrentJobs([results]);
       }else{
-        if(FULL_URL.length===59){
-          //always enters here  
+        let areParamsEmpty = Object.keys(params).length===0; //if no params added
+        if(areParamsEmpty){    
           if(results.length !== 0 ){
             setCurrentJobs([results]);
           }

@@ -45,9 +45,9 @@ export default function Job({job}) {
           <div>
             <h2 className="text-lg pr-4 font-bold leading-6 font-brand text-very-dark-blue dark:text-white ml-6">{job.title}</h2>
           </div>
-          <div className="flex items-center">
-            <span className=" ml-6 text-sm text-dark-grey ">{job.company}</span>
-          </div> 
+            <div className="flex items-center">
+              <span className=" ml-6 text-sm text-dark-grey ">{job.company}</span>
+            </div> 
           <div>
             <span className="ml-6  text-violet font-semibold">{job.location}</span>
           </div>
