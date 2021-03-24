@@ -2,18 +2,18 @@ import React from 'react';
 import {getRandomColor,formatDate} from './colorAndDate';
 import classNames from 'classnames';
 import {useHistory} from 'react-router-dom';
-import {useJobsContext} from '../Components/AppContext';
 
 export default function Job({job}) {
   
-  const {setJobViewed} = useJobsContext();
   const history = useHistory();
   
 
   const goToJobDescription = ({job})=>{
-    setJobViewed(job);
+    localStorage.setItem("jobViewed",JSON.stringify(job))
     history.push(`/description`);
   }
+
+
 
   return (
     <div className="my-1 px-1 w-full  md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 p-2 mt-4">
@@ -29,9 +29,9 @@ export default function Job({job}) {
               </svg>
             </div>
             <div>
-                  <span  className=" text-sm  font-semibold tracking-wider uppercase ">
-                    View Details
-                  </span>  
+                <span  className=" text-sm  font-semibold tracking-wider uppercase ">
+                  View Details
+                </span>  
             </div>
         </div> <br/>
         <div className="flex justify-start flex-col mt-6 space-y-3 pl-2">
@@ -46,7 +46,7 @@ export default function Job({job}) {
             <h2 className="text-lg pr-4 font-bold leading-6 font-brand text-very-dark-blue dark:text-white ml-6">{job.title}</h2>
           </div>
             <div className="flex items-center">
-              <span className=" ml-6 text-sm text-dark-grey ">{job.company}</span>
+              <span className="ml-6 text-sm text-dark-grey">{job.company}</span>
             </div> 
           <div>
             <span className="ml-6  text-violet font-semibold">{job.location}</span>

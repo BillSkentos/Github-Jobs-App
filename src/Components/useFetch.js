@@ -35,35 +35,6 @@ export default function useFetch(params,page) {
   let FULL_URL = BASE_URL + queryString;
 
 
-  // let FULL_URL=BASE_URL;
-  // //add description first in url 
-  // if((description && description.length>0)){
-  //     FULL_URL = FULL_URL.concat(`description=${description}`);
-  //   if(location && location.length>0){
-  //     FULL_URL = FULL_URL.concat(`&location=${location}`);
-  //   }
-  // }
-  
-  // //add location first in url 
-  // if((location && location.length>0) && !description){
-  //     FULL_URL = FULL_URL.concat(`location=${location}`)
-  //   if(description && description.length>0){
-  //     FULL_URL = FULL_URL.concat(`&description=${description}`)
-  //   }
-  // }
-
-  // //add markdown to url 
-  // if(FULL_URL.length>52){
-  //   FULL_URL = FULL_URL.concat(`&markdown=true&page=${page}`);
-  // }else{
-  //   FULL_URL = FULL_URL.concat(`markdown=true&page=${page}`);
-  // }
-
-  // //add full time to url 
-  // if(typeof fullTime !== "undefined"){
-  //   FULL_URL = FULL_URL.concat(`&full_time=${fullTime}`);
-  // }
-
   //add proxy to url 
   const urlWithProxy = `https://api.allorigins.win/get?url=${encodeURIComponent(FULL_URL)}`;
 

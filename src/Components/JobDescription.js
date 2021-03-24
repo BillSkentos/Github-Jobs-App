@@ -1,5 +1,4 @@
 import {React,useState,useEffect,useRef} from 'react';
-import {useJobsContext} from '../Components/AppContext';
 import {getRandomColor,formatDate} from './colorAndDate';
 import classNames from 'classnames';
 import marked from 'marked';
@@ -7,7 +6,7 @@ import JobSkeleton from '../Components/SkeletonElems/JobSkeleton';
 
 export default function JobDescription() {
    
-  const {jobViewed} = useJobsContext();
+  const jobViewed = JSON.parse(localStorage.getItem("jobViewed"));
   const [showSkel , setShowSkel] = useState(true); //show loading skeleton effect
   
   const applyRef = useRef();

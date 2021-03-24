@@ -8,7 +8,6 @@ export default function AppProvider(props) {
   const [darkMode , setDarkMode] = useState(false);//dark mode state 
   const [currentJobs,setCurrentJobs] = useState([]); //current jobs 
   const [params,setParams] = useState({}); // filters
-  const [jobViewed,setJobViewed] = useState({});
   const [page,setPage] = useState(1); //current page  
   const locationRef= useRef(); //location filter input ref 
   const textRef = useRef(); //text filter input ref
@@ -23,8 +22,6 @@ export default function AppProvider(props) {
     setParams,
     darkMode,
     setDarkMode,
-    jobViewed,
-    setJobViewed,
     locationRef,
     textRef,
     fullTimeRef,
