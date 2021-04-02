@@ -5,7 +5,7 @@ const JobAppContext = createContext(); //create app context
 
 export default function AppProvider(props) {
 
-  const [darkMode , setDarkMode] = useState(false);//dark mode state 
+  const [darkMode , setDarkMode] = useState(() => JSON.parse(localStorage.getItem("isDark")) ?? false);//dark mode state 
   const [currentJobs,setCurrentJobs] = useState([]); //current jobs 
   const [params,setParams] = useState({}); // filters
   const [page,setPage] = useState(1); //current page  

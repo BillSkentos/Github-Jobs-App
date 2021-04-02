@@ -18,13 +18,19 @@
 
 /* FOR JOB DESCRIPTION MARKDOWN */
 
-strong {
+/* strong {
   @apply text-black;
-}
+} */
 
 .markDownArticle > p {
   @apply mt-4;
   @apply mb-4;
+}
+
+
+
+.darkArticle > p >  strong {
+  @apply text-white;
 }
 
 .markDownArticle > ul {

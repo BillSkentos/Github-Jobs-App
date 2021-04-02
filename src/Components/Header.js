@@ -8,11 +8,14 @@ export default function Header() {
   const {darkMode,setDarkMode} = useJobsContext();
 
   //change theme 
-  const toggleTheme = ()=>{
-    setDarkMode(!darkMode);
+  const toggleTheme = () => {
+    const updatedDarkMode = !darkMode;
+    setDarkMode(updatedDarkMode);
     const root = window.document.documentElement;
-    root.classList.toggle('dark');
-  }
+    localStorage.setItem("isDark", updatedDarkMode);
+  
+    root.classList.toggle("dark");
+  };
   
   const returnToHome = ()=>{
     history.push('/');

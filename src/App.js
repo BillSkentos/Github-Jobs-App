@@ -8,17 +8,15 @@ import JobDescription from './Components/JobDescription';
 
 function App() {
   
-
   return (
-      <div className='App'> 
-        <Header />
-        <Route exact path = '/'> 
-          <SearchBar />
-          <JobList />
-        </Route>
-        <Route path = '/description' component = {JobDescription} />
-    
-      </div>
+    <div className='App'> 
+      <Header />
+      <Route exact path = '/'> 
+        <SearchBar />
+        <JobList />
+      </Route>
+      <Route path = '/description' component = {JobDescription} />
+    </div>
       
   );
 }
