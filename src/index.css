@@ -19,8 +19,25 @@
 /* FOR JOB DESCRIPTION MARKDOWN */
 
 /* strong {
-  @apply text-black;
+  @apply text-black dark:text-white
 } */
+
+@layer base {
+  strong {
+    @apply text-black dark:text-white;
+  }
+
+
+  input{
+    @apply dark:text-white;
+  }
+
+
+
+  .markDownArticle > h2 {
+    @apply dark:text-white;
+  }
+}
 
 .markDownArticle > p {
   @apply mt-4;

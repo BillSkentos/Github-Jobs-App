@@ -9,12 +9,13 @@ export default function Header() {
 
   //change theme 
   const toggleTheme = () => {
+
     const updatedDarkMode = !darkMode;
     setDarkMode(updatedDarkMode);
     const root = window.document.documentElement;
     localStorage.setItem("isDark", updatedDarkMode);
-  
     root.classList.toggle("dark");
+    
   };
   
   const returnToHome = ()=>{

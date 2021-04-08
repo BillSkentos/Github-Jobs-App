@@ -20,7 +20,7 @@ export default function Job({job}) {
       <div className={classNames('text-white font-brand font-bold text-lg absolute grid w-12 h-12 p-2 transform -translate-y-1/2 translate-x-1/2  place-items-center rounded-2xl', getRandomColor(job.company)) } >
         {job.company[0]}
       </div>
-      <article className="overflow-hidden rounded-lg shadow-lg h-56 lg:w-full md:w-80  bg-white dark:bg-very-dark-blue">
+      <article className="overflow-hidden rounded-lg shadow-lg h-64 lg:w-full md:w-80  bg-white dark:bg-very-dark-blue">
         <div onClick={()=>goToJobDescription({job})}  className="p-2 float-right flex items-center space-x-4 justify-end text-violet cursor-pointer  w-auto  hover:bg-gray-200">
             <div>
               <svg className="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">

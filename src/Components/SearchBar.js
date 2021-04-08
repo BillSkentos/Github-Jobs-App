@@ -11,6 +11,12 @@ export default function SearchBar() {
     setWidth(window.innerWidth);
   }
 
+  const clearInputFields = ()=>{
+    
+    const inptRefs = [textRef,locationRef];
+    inptRefs.forEach(rf=>rf.current.value="");
+  }
+
 
   const SearchWithFilters = ()=>{
     
@@ -30,6 +36,7 @@ export default function SearchBar() {
       
       setPage(1);
       setParams(filters);
+      clearInputFields(); 
     }else{
       setPage(1);
       setParams({});
